@@ -520,7 +520,8 @@ ELSEIF(PARANOT1+PARANOT2>76695843)[
 
 "But we do want to check that the total no. of particles does not exceed"
 "2^32-1 and, thus, cannot be written to the header"
-IF(PARANOT1+PARANOT2>max_total_particle_no)[
+"Note: Only for EGSnrc format"
+IF(i_iaea_in=0 & PARANOT1+PARANOT2>max_total_particle_no)[
        OUTPUT; (//' ***WARNING***'/
        ' Total no. of particles in combined ',
        ' file will exceed 2^32-1.'/
